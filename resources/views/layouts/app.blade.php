@@ -16,10 +16,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css')" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }} " rel="stylesheet" defer>
     @livewireStyles
+    @stack('styles')
 </head>
 
 <body>
@@ -83,6 +86,7 @@
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     @livewireScripts
     @stack('scripts')
 </body>

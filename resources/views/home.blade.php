@@ -4,5 +4,6 @@
 <div class="container">
     {{-- @livewire('counter') --}}
     @livewire('posts')
+    @livewire('datatables')
 </div>
 @endsection
