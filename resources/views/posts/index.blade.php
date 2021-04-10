@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    {{-- @livewire('counter') --}}
-    @livewire('posts')
+    @livewire('post.index')
 </div>
 @endsection
