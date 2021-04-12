@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 150px;">
     {{-- @livewire('counter') --}}
-    @livewire('posts')
-    {{-- @livewire('data-table') --}}
+    @livewire('data-table')
 </div>
 @endsection
