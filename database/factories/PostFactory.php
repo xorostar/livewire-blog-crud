@@ -10,6 +10,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker->title,
         'excerpt' => $faker->sentence,
         'body' => $faker->paragraph,
-        'user_id' => 1,
+        'user_id' => factory(App\User::class),
     ];
 });
