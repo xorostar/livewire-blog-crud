@@ -15,7 +15,9 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
-        "livewire/livewire": "^2.4"
+        "livewire/livewire": "^2.4",
+        "nicolaslopezj/searchable": "^1.13",
+      "ext-http": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
