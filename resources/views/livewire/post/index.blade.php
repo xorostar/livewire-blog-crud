@@ -8,11 +8,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">User</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Excerpt</th>
-                        <th scope="col">Created at</th>
+                        <th scope="col" wire:click="toggleOrderBy('id')"># ({{ $this->orderBy && $this->orderBy[0] == 'id' ? $this->order : '' }})</th>
+                        <th scope="col" wire:click="toggleOrderBy('user_id')">User ({{ $this->orderBy && $this->orderBy[0] == 'user_id' ? $this->order : '' }})</th>
+                        <th scope="col" wire:click="toggleOrderBy('title')">Title ({{ $this->orderBy && $this->orderBy[0] == 'title' ? $this->order : '' }})</th>
+                        <th scope="col" wire:click="toggleOrderBy('excerpt')">Excerpt ({{ $this->orderBy && $this->orderBy[0] == 'excerpt' ? $this->order : '' }})</th>
+                        <th scope="col" wire:click="toggleOrderBy('created_at')">Created at ({{ $this->orderBy && $this->orderBy[0] == 'created_at' ? $this->order : '' }})</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +25,7 @@
                             <td>{{ $post->created_at }}</td>
                         </tr>
                     @empty
-                        <div class="alert alert-info">No records found.</div>
+                        <td class="alert alert-info" colspan="5">No records found.</td>
                     @endforelse
                 </tbody>
             </table>
