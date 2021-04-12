@@ -10,13 +10,19 @@ class DataTable extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    public $search;
+    public $records = 10;
     public function mount()
     {
     }
 
     public function render()
     {
-        $posts = Auth::user()->posts()->paginate(1);
+        $posts = Auth::user()->posts()
+            ->where('title', 'like', '%' . $this->search . '%')
+            ->orWhere('excerpt', 'like', '%' . $this->search . '%')
+            ->orWhere('body', 'like', '%' . $this->search . '%')
+            ->paginate($this->records);
         return view('livewire.data-table', compact('posts'));
     }
 }
