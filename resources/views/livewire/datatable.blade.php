@@ -7,14 +7,14 @@
                     <input class="form-control" wire:model.debounce.500ms="search" placeholder="Search title,body,excerpt...">
                 </div>
 
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <select class="form-control" wire:model="orderBy">
                         <option>Order By</option>
                         <option value="title">Title</option>
                         <option value="excerpt">Excerpt</option>
                         <option value="created_at">Created at</option>
                     </select>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -23,9 +23,9 @@
                  <tr>
                      <th scope="col" >#</th>
                      <th scope="col" >Author</th>
-                     <th scope="col" >Title</th>
-                     <th scope="col" >Excerpt</th>
-                     <th scope="col" >Body</th>
+                     <th scope="col" ><a href="#" wire:click="sortBy('title')">Title</a></th>
+                     <th scope="col"><a href="#" wire:click="sortBy('excerpt')">Excerpt</a></th>
+                     <th scope="col"><a href="#" wire:click="sortBy('body')">Body</a></th>
                  </tr>
                  @forelse($posts as $key => $post)
                  <tr>
@@ -51,7 +51,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                       <label for="pagination-links">Select Pagination</label>
-                      <select wire:model="pagination">
+                      <select wire:model="perPage">
                           <option value="10">10</option>
                           <option value="20">20</option>
                           <option value="50">50</option>

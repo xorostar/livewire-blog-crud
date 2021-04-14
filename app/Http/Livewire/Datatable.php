@@ -4,25 +4,12 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Post;
-use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\DataTables\DataTable as UpdatedDataTable;
 
 class Datatable extends Component
 {
-    use WithPagination;
-
-    protected $paginationTheme = 'bootstrap';
-
-    public $pagination = 10;
-
-    public $search = '';
-
-    public $orderBy = 'id';
-
-    public function updatingSearch()
-    {
-        $this->resetPage();
-    }
+    use UpdatedDataTable;
 
     public function render()
     {
@@ -33,9 +20,9 @@ class Datatable extends Component
                 ->orWhere('excerpt', 'like', '%' . $this->search . '%')
                 ->orWhere('body', 'like', '%' . $this->search . '%')
                 ->orderBy($this->orderBy)
-                ->paginate($this->pagination);
+                ->paginate($this->perPage);
         } else {
-            $posts = $user->posts()->orderBy($this->orderBy)->paginate($this->pagination);
+            $posts = $user->posts()->orderBy($this->orderBy, $this->hasSortBy)->paginate($this->perPage);
         }
 
         return view('livewire.datatable', compact('posts'));
