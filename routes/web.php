@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts', 'PostController@index')->name('posts.index');
+Route::view('/todos', 'todos.index')->name('todos.index');
+Route::view('/are-unit', 'area-unit.index')->name('area-unit.index');
