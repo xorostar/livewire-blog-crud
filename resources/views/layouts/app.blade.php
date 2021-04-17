@@ -86,7 +86,7 @@
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <script src="https://kit.fontawesome.com/1c1def59d0.js" crossorigin="anonymous"></script>
     @livewireScripts
     @stack('scripts')
 </body>

@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/test/todo', 'todos/test')->name('todos.test');
