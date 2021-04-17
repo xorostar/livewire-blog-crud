@@ -43,6 +43,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts.index') }}">
+                                View Posts
+                            </a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
@@ -82,6 +87,7 @@
         </main>
     </div>
 
+    <script src="https://kit.fontawesome.com/1c1def59d0.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @livewireScripts
     @stack('scripts')

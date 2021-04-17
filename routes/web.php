@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/show', 'HomeController@viewAll')->name('view-all');
+Route::get('/posts', 'PostController@index')->name('posts.index');
