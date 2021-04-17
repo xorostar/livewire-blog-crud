@@ -35,14 +35,12 @@
     Type a value in any of the fields to convert between Length measurements:
   </div>
 </div>
-<div class="p-4" x-data='[ marla:""
-                        , kanal:""
-                        ,squareFoot:"" ]'>
+<div class="p-4" x-data="[ marla:'', kanal:'', squareFoot:'', squareYard:'', squareMeter:'' ]">
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
         <label for="marla">Marla</label>
-        <input class="form-control" id="marla" type="number" x-model="area" x-on:keydown.enter="">
+        <input class="form-control" id="marla" type="number" x-model="marla" x-on:keydown="unitConverter(marla)">
       </div>
     </div>
     <div class="col-md-4">
@@ -91,48 +89,37 @@
 
 @push('scripts')
 <script>
-  function converter(area) {
-    console.log(area);
-  }
-
-
-  var marlaInput = document.getElementById("marla");
-  var kanalInput = document.getElementById("kanal");
-  var squareFootInput = document.getElementById("square-foot");
-  var squareYardInput = document.getElementById("square-yard");
-  var squareMeterInput = document.getElementById("square-meter");
-
-  function unitConverter(unit, value) {
+  function unitConverter(unit) {
     switch (unit) {
       case 'marla':
-        kanalInput.value = value / 20;
-        squareFootInput.value = value * 272;
-        squareMeterInput.value = value * 25.293;
-        squareYardInput.value = value * 30.25;
+        kanal = unit / 20;
+        squareFoot = unit * 272;
+        squareMeter = unit * 25.293;
+        squareYard = unit * 30.25;
         break;
       case 'kanal':
-        marlaInput.value = value * 20;
-        squareFootInput.value = value * 5445;
-        squareMeterInput.value = value * 506;
-        squareYardInput.value = value * 605;
+        marla = unit * 20;
+        squareFoot = unit * 5445;
+        squareMeter = unit * 506;
+        squareYard = unit * 605;
         break;
-      case 'square-foot':
-        marlaInput.value = value / 272;
-        kanalInput.value = value / 5445;
-        squareMeterInput.value = value / 10.764;
-        squareYardInput.value = value / 9;
+      case 'squareFoot':
+        marla = unit / 272;
+        kanal = unit / 5445;
+        squareMeter = unit / 10.764;
+        squareYard = unit / 9;
         break;
-      case 'square-meter':
-        marlaInput.value = value / 25.293;
-        kanalInput.value = value / 506;
-        squareFootInput.value = value * 10.764;
-        squareYardInput.value = value * 1.196;
+      case 'squareMeter':
+        marla = unit / 25.293;
+        kanal = unit / 506;
+        squareFoot = unit * 10.764;
+        squareYard = unit * 1.196;
         break;
-      case 'square-yard':
-        marlaInput.value = value / 30.25;
-        kanalInput.value = value / 605;
-        squareFootInput.value = value * 9;
-        squareMeterInput.value = value / 1.196;
+      case 'squareYard':
+        marla = unit / 30.25;
+        kanal = unit / 605;
+        squareFoot = unit * 9;
+        squareMeter = unit / 1.196;
         break;
     }
   }
