@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/data-table', 'HomeController@dataTable')->name('data-table');
 Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::view('/todos', 'todos.index')->name('todos.index');
+Route::view('unit-converter', 'unit-converter.index')->name('unit-converter.index');

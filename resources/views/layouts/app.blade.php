@@ -43,6 +43,11 @@
                             Data Table
                         </a>
                         </li>
+                        <li class=" nav-item">
+                        <a class="nav-link" href="{{ route('unit-converter.index') }}">
+                            Unit Converter
+                        </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
