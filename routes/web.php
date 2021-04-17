@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('/converter', 'converter')->name('converter');
+Route::get('/converter', fn () => view('converter'))->name('converter');
