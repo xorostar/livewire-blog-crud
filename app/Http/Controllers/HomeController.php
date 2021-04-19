@@ -31,4 +31,14 @@ class HomeController extends Controller
     {
         return view('view-all');
     }
+
+    public function unitConverter()
+    {
+        return view('unitconvert');
+    }
+
+    public function converter()
+    {
+        return view('convert');
+    }
 }
