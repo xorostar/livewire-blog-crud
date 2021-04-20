@@ -35,96 +35,47 @@
     Type a value in any of the fields to convert between Length measurements:
   </div>
 </div>
-<div class="p-4" x-data="[ marla:'', kanal:'', squareFoot:'', squareYard:'', squareMeter:'' ]">
+<div class="p-4" x-data="{ marla:'', kanal:'', squareFoot:'', squareYard:'', squareMeter:'' }">
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
         <label for="marla">Marla</label>
-        <input class="form-control" id="marla" type="number" x-model="marla" x-on:keydown="unitConverter(marla)">
+        <input class="form-control" id="marla" type="number" x-model="marla" x-on:keyup=" kanal = marla / 20; squareFoot = marla * 272; squareMeter = marla * 25.293; squareYard = marla * 30.25; ">
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
         <label for="kanal">Kanal</label>
-        <input class="form-control" id="kanal" type="number" oninput="unitConverter(this.id, this.value)" onchange="unitConverter(this.id, this.value)">
+        <input class="form-control" id="kanal" type="number" x-model="kanal" x-on:keyup="  marla = kanal * 20; squareFoot = kanal * 5445; squareMeter = kanal * 506; squareYard = kanal * 605;  ">
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
         <label for="square-foot">Square Foot</label>
-        <input class="form-control" id="square-foot" type="number" oninput="unitConverter(this.id, this.value)" onchange="unitConverter(this.id, this.value)">
+        <input class="form-control" id="square-foot" type="number" x-model="squareFoot" x-on:keyup=" marla = squareFoot / 272; kanal = squareFoot / 5445; squareMeter = squareFoot / 10.764; squareYard = squareFoot / 9; ">
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <label for="square-yard">Square Yard</label>
-        <input class="form-control" id="square-yard" type="number" oninput="unitConverter(this.id, this.value)" onchange="unitConverter(this.id, this.value)">
+        <input class="form-control" id="square-yard" type="number" x-model="squareYard" x-on:keyup=" marla = squareYard / 30.25; kanal = squareYard / 605; squareFoot = squareYard * 9; squareMeter = squareYard / 1.196; ">
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <label for="square-meter">Square Meters</label>
-        <input class="form-control" id="square-meter" type="number" oninput="unitConverter(this.id, this.value)" onchange="unitConverter(this.id, this.value)">
+        <input class="form-control" id="square-meter" type="number" x-model="squareMeter" x-on:keyup=" marla = squareMeter / 25.293; kanal = squareMeter / 506;  squareFoot = squareMeter * 10.764; squareYard = squareMeter * 1.196;
+                                    ">
       </div>
     </div>
   </div>
 </div>
 
-<footer class="p-4">
-  <a class="text-success" href="https://www.aswadali.me" target="_blank">
-    <i class="fas fa-globe"></i>
-  </a>
-  <br>
-  <a class="text-success" href="https://www.linkedin.com/in/aswadali/" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <br>
-  <a class="text-success" href="https://codepen.io/AswadAli/" target="_blank">
-    <i class="fab fa-codepen"></i>
-  </a>
-  <br>
-</footer>
 </div>
 
 
 @push('scripts')
-<script>
-  function unitConverter(unit) {
-    switch (unit) {
-      case 'marla':
-        kanal = unit / 20;
-        squareFoot = unit * 272;
-        squareMeter = unit * 25.293;
-        squareYard = unit * 30.25;
-        break;
-      case 'kanal':
-        marla = unit * 20;
-        squareFoot = unit * 5445;
-        squareMeter = unit * 506;
-        squareYard = unit * 605;
-        break;
-      case 'squareFoot':
-        marla = unit / 272;
-        kanal = unit / 5445;
-        squareMeter = unit / 10.764;
-        squareYard = unit / 9;
-        break;
-      case 'squareMeter':
-        marla = unit / 25.293;
-        kanal = unit / 506;
-        squareFoot = unit * 10.764;
-        squareYard = unit * 1.196;
-        break;
-      case 'squareYard':
-        marla = unit / 30.25;
-        kanal = unit / 605;
-        squareFoot = unit * 9;
-        squareMeter = unit / 1.196;
-        break;
-    }
-  }
-
-</script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 @endpush
 
 @endsection
