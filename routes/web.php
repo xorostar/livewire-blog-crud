@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/test/todo', 'todos/test')->name('todos.test');
+Route::view('unit-converter', 'area-unit-converter/index')->name('area.unit.converter');
