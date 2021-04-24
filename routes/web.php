@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts', 'PostController@index')->name('posts.index');
+
+Route::view('/movies', 'movies.index')->name('movies');
