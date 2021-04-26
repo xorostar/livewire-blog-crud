@@ -164,7 +164,7 @@
                 showConfirmButton: false,
                 timer: 3000,
                 timerProgressBar: true,
-                title: 'Post added successfully!',
+                title: 'Post added successfully asasdfads!',
                 toast: true,
                 position: 'top-end'
             });
