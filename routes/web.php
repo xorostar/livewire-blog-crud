@@ -24,3 +24,4 @@ Route::get('/show', 'HomeController@viewAll')->name('view-all');
 Route::get('/converter', 'HomeController@unitConverter')->name('converter');
 Route::get('/converters', 'HomeController@converter')->name('converters');
 Route::get('/posts', 'PostController@index')->name('posts.index');
+Route::get('/api', 'HomeController@api')->name('posts.api');
