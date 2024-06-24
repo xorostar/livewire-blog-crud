@@ -1,6 +1,7 @@
 <div>
     <h1 class='text-center'>Posts</h1>
     <div class="card">
+
         <div class="card-body">
             <form wire:submit.prevent='storePost'>
                 <div class="h2">
@@ -10,6 +11,7 @@
                             <span class="sr-only">Loading...</span>
                         </div>
                     </div>
+                    <a class="btn btn-primary" href="{{route('view-all')}}" style="float: right">View All</a>
                 </div>
                 <div class="form-group">
                     <label for="title">

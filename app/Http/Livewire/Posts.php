@@ -77,10 +77,11 @@ class Posts extends Component
         $this->emit('postDeleted');
     }
 
+
+
     public function render()
     {
         $posts = Auth::user()->posts()->paginate(5);
-
         return view('livewire.posts', compact('posts'));
     }
 }
